@@ -42,13 +42,15 @@ class MoviesListViewController: UIViewController {
     }
     
     func loadMovies() {
+        
         KVNProgress.show()
-        self.viewModel.loadMoviesList { (isSuccess:Bool) in
-            if isSuccess {
-                self.moviesCollectionView.reloadData()
-            }
-            
+        self.viewModel.loadMoviesList { [unowned self] (isSuccess:Bool) in
             KVNProgress.dismiss(completion: {
+                if isSuccess {
+                    self.moviesCollectionView.reloadData()
+                } else {
+                    KVNProgress.showError()
+                }
                 self.refreshControl.endRefreshing()
             })
         }
