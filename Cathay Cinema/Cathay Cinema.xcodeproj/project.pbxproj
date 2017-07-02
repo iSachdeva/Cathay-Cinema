@@ -17,6 +17,9 @@
 		2807B5881F080416007258E6 /* MoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807B5871F080416007258E6 /* MoviesListViewController.swift */; };
 		286D6A5F1F089BBB005DB2DD /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D6A5E1F089BBB005DB2DD /* MovieListViewModel.swift */; };
 		286D6A611F089C73005DB2DD /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D6A601F089C73005DB2DD /* Movies.swift */; };
+		28AF0AA11F08ACA100439BA6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF0AA01F08ACA100439BA6 /* NetworkManager.swift */; };
+		28AF0AA31F08AD1200439BA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF0AA21F08AD1200439BA6 /* Constants.swift */; };
+		28AF0AA51F08D24100439BA6 /* MovieListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF0AA41F08D24100439BA6 /* MovieListCollectionViewCell.swift */; };
 		74E7E1182FC431B8D963002C /* Pods_Cathay_Cinema.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83FF428E7302A7B9E6A7E5F /* Pods_Cathay_Cinema.framework */; };
 		FCDCFC1732D72E1D1327DDAE /* Pods_Cathay_CinemaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4800F90E091E24A86CB63DDD /* Pods_Cathay_CinemaTests.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +57,9 @@
 		2807B5871F080416007258E6 /* MoviesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesListViewController.swift; sourceTree = "<group>"; };
 		286D6A5E1F089BBB005DB2DD /* MovieListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		286D6A601F089C73005DB2DD /* Movies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		28AF0AA01F08ACA100439BA6 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		28AF0AA21F08AD1200439BA6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		28AF0AA41F08D24100439BA6 /* MovieListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListCollectionViewCell.swift; sourceTree = "<group>"; };
 		35224BB0682FE94CFC5A4404 /* Pods-Cathay Cinema.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cathay Cinema.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cathay Cinema/Pods-Cathay Cinema.debug.xcconfig"; sourceTree = "<group>"; };
 		4800F90E091E24A86CB63DDD /* Pods_Cathay_CinemaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cathay_CinemaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E1AB4B3F84A62940E315195 /* Pods-Cathay CinemaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cathay CinemaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cathay CinemaUITests/Pods-Cathay CinemaUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,13 +137,13 @@
 		2807B5581F080215007258E6 /* Cathay Cinema */ = {
 			isa = PBXGroup;
 			children = (
-				2807B5591F080215007258E6 /* AppDelegate.swift */,
-				2807B5871F080416007258E6 /* MoviesListViewController.swift */,
-				286D6A5E1F089BBB005DB2DD /* MovieListViewModel.swift */,
-				286D6A601F089C73005DB2DD /* Movies.swift */,
-				2807B55D1F080215007258E6 /* Main.storyboard */,
+				28AF0AA61F08D4D400439BA6 /* AppDelegate */,
+				28AF0AA91F08D51C00439BA6 /* Model */,
+				28AF0AA81F08D4F800439BA6 /* ViewAndViewModel */,
+				28AF0AA71F08D4E000439BA6 /* ViewControllers */,
+				28AF0AAA1F08D52F00439BA6 /* NetworkManager */,
+				28AF0AAB1F08D55F00439BA6 /* Constants */,
 				2807B5601F080215007258E6 /* Assets.xcassets */,
-				2807B5621F080215007258E6 /* LaunchScreen.storyboard */,
 				2807B5651F080215007258E6 /* Info.plist */,
 			);
 			path = "Cathay Cinema";
@@ -159,6 +165,57 @@
 				2807B57B1F080215007258E6 /* Info.plist */,
 			);
 			path = "Cathay CinemaUITests";
+			sourceTree = "<group>";
+		};
+		28AF0AA61F08D4D400439BA6 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				2807B5591F080215007258E6 /* AppDelegate.swift */,
+				2807B5621F080215007258E6 /* LaunchScreen.storyboard */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		28AF0AA71F08D4E000439BA6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2807B5871F080416007258E6 /* MoviesListViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		28AF0AA81F08D4F800439BA6 /* ViewAndViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2807B55D1F080215007258E6 /* Main.storyboard */,
+				286D6A5E1F089BBB005DB2DD /* MovieListViewModel.swift */,
+				28AF0AA41F08D24100439BA6 /* MovieListCollectionViewCell.swift */,
+			);
+			name = ViewAndViewModel;
+			sourceTree = "<group>";
+		};
+		28AF0AA91F08D51C00439BA6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				286D6A601F089C73005DB2DD /* Movies.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		28AF0AAA1F08D52F00439BA6 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				28AF0AA01F08ACA100439BA6 /* NetworkManager.swift */,
+			);
+			name = NetworkManager;
+			sourceTree = "<group>";
+		};
+		28AF0AAB1F08D55F00439BA6 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				28AF0AA21F08AD1200439BA6 /* Constants.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 		A517797D31FC9CDB3B9958BC /* Frameworks */ = {
@@ -455,10 +512,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28AF0AA51F08D24100439BA6 /* MovieListCollectionViewCell.swift in Sources */,
 				2807B55A1F080215007258E6 /* AppDelegate.swift in Sources */,
 				2807B5881F080416007258E6 /* MoviesListViewController.swift in Sources */,
+				28AF0AA11F08ACA100439BA6 /* NetworkManager.swift in Sources */,
 				286D6A611F089C73005DB2DD /* Movies.swift in Sources */,
 				286D6A5F1F089BBB005DB2DD /* MovieListViewModel.swift in Sources */,
+				28AF0AA31F08AD1200439BA6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
