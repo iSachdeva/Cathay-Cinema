@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KVNProgress
 
 class MoviesListViewController: UIViewController {
     
@@ -37,16 +38,19 @@ class MoviesListViewController: UIViewController {
         
         self.viewModel.clearMovieList()
         self.moviesCollectionView.reloadData()
-        
         self.loadMovies()
     }
     
     func loadMovies() {
+        KVNProgress.show()
         self.viewModel.loadMoviesList { (isSuccess:Bool) in
             if isSuccess {
                 self.moviesCollectionView.reloadData()
             }
-            self.refreshControl.endRefreshing()
+            
+            KVNProgress.dismiss(completion: {
+                self.refreshControl.endRefreshing()
+            })
         }
     }
 }

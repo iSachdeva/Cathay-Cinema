@@ -42,15 +42,53 @@ class MovieDetailViewModel: NSObject {
     }
     
     func originalLanguage() -> String {
-        guard let language = self.movieDetail?.originalLanguage else {
+        guard let languageCode = self.movieDetail?.originalLanguage else {
             return "Language: --"
         }
+        
+        var language = ""
+        switch languageCode {
+        case "en":
+            language = "English"
+            break
+        case "fr":
+            language = "French"
+            break
+        case "xx":
+            language = "Unknown"
+            break
+            
+        default:
+            language = languageCode
+        }
+        
         return "Language: \(language)"
     }
     
     func duration() -> String {
     
-        return "Duration: --"
+        guard let duration = self.movieDetail?.runTime else {
+            return "Duration: --"
+        }
+        
+        return "Duration: \(String(duration)) mins"
+    }
+    
+    func overview() -> String {
+        
+        guard let overview = self.movieDetail?.overview else {
+            return ""
+        }
+        
+        return overview
+    }
+    
+    func popularity() -> Double {
+        guard let popularity = self.selectedMovie?.popularity else {
+            return 0.0
+        }
+        
+        return popularity
     }
     
     func loadImage(imageView:UIImageView) {

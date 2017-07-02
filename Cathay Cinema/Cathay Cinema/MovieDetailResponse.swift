@@ -14,8 +14,7 @@ class MovieDetail:Mappable {
     var adult:Bool?
     var backdropPath:String?
     var belongsToCollection:String?
-    var budget:String?
-    
+    var budget:Int?
     var homePage:String?
     var id:Int?
     var imdbID:String?
@@ -25,14 +24,14 @@ class MovieDetail:Mappable {
     var popularity:Double?
     var posterPath:String?
     var releaseDate:String?
-    var revenue:String?
-    var runTime:String?
+    var revenue:Int?
+    var runTime:Int?
     var status:String?
     var tagLine:String?
     var title:String?
     var video:Bool?
     var voteAverage:Double?
-    var voteCount:Double?
+    var voteCount:Int?
     
     var generes:[Generes]?
     var productionCompanies:[ProductionCompany]?
@@ -47,8 +46,9 @@ class MovieDetail:Mappable {
     func mapping(map: Map) {
         
         self.adult <- map["adult"]
+        self.revenue <- map["revenue"]
+        self.runTime <- map["runtime"]
         self.backdropPath <- map["backdrop_path"]
-        self.belongsToCollection <- map["belongs_to_collection"]
         self.budget <- map["budget"]
         self.homePage <- map["homepage"]
         self.id <- map["id"]
@@ -59,8 +59,6 @@ class MovieDetail:Mappable {
         self.popularity <- map["popularity"]
         self.posterPath <- map["poster_path"]
         self.releaseDate <- map["release_date"]
-        self.revenue <- map["revenue"]
-        self.runTime <- map["runtime"]
         self.status <- map["status"]
         self.tagLine <- map["tagline"]
         self.title <- map["title"]
@@ -71,7 +69,6 @@ class MovieDetail:Mappable {
         self.productionCompanies <- map["production_companies"]
         self.productionCountries <- map["production_countries"]
         self.spokenLanguages <- map["spoken_languages"]
-        
     }
 }
 

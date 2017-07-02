@@ -16,7 +16,7 @@ class MovieListViewModel:NSObject {
     fileprivate let cellIdentifier = "MovieCollectionViewCellIdentifier"
 
     let networkManager = NetworkManager()
-    let moviesSortBy = "release_date.desc"
+    let moviesSortBy = "release_date.asc"
     var pageNumber = 0
     var movies = [Movie]()
     var isLastPageLoaded:Bool = false

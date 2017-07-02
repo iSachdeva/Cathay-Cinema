@@ -6,6 +6,7 @@ PODS:
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 2.0)
   - Cosmos (10.0.0)
+  - KVNProgress (2.3.1)
   - ObjectMapper (2.2.7)
 
 DEPENDENCIES:
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - AlamofireImage (~> 3.1)
   - AlamofireObjectMapper (~> 4.0)
   - Cosmos (~> 10.0)
+  - KVNProgress
   - ObjectMapper (~> 2.2)
 
 SPEC CHECKSUMS:
@@ -20,8 +22,9 @@ SPEC CHECKSUMS:
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
   Cosmos: bb9310e73ad1ad472b183b848b959302c569cf09
+  KVNProgress: 8167b1f19e2758290c0b6143020ed9dcbb0477a1
   ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
 
-PODFILE CHECKSUM: 2ecacf04c865445368f508b6812884eae43f1938
+PODFILE CHECKSUM: 13263d539eef351ccfe6e01b942d036d7f5e0786
 
 COCOAPODS: 1.2.1

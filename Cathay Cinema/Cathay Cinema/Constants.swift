@@ -23,9 +23,12 @@ struct Constant {
         static let movieList = "3/discover/movie"
         static let movieDetail = "3/movie"
         static let imageBaseUrl = "https://image.tmdb.org/t/p/"
+        static let bookingUrl = "https://www.cathaycineplexes.com.sg/"
     }
     
     struct Segue {
         static let MovieListToMovieDetailScreenID = "MovieListToMovieDetailScreenID"
+        static let MovieDetailToBookingWebScreenID = "MovieDetailToBookingWebScreenID"
+        
     }
 }

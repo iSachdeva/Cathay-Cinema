@@ -63,7 +63,6 @@ class Movie:Mappable {
         self.overview <- map["overview"]
         self.releaseDate <- map["release_date"]
         self.genreIds <- map["genre_ids"]
-        
     }
 
 }

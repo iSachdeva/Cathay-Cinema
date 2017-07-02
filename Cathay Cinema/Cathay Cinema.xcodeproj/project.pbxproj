@@ -15,9 +15,11 @@
 		2807B56F1F080215007258E6 /* Cathay_CinemaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807B56E1F080215007258E6 /* Cathay_CinemaTests.swift */; };
 		2807B57A1F080215007258E6 /* Cathay_CinemaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807B5791F080215007258E6 /* Cathay_CinemaUITests.swift */; };
 		2807B5881F080416007258E6 /* MoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807B5871F080416007258E6 /* MoviesListViewController.swift */; };
+		28302F231F0959E60056D413 /* BookingWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28302F221F0959E60056D413 /* BookingWebViewModel.swift */; };
 		285C465D1F09128C0085CE32 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C465C1F09128C0085CE32 /* MovieDetailViewModel.swift */; };
 		285C46611F0917F60085CE32 /* MovieDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C46601F0917F60085CE32 /* MovieDetailTableViewController.swift */; };
 		285C46631F0923C70085CE32 /* MovieDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C46621F0923C70085CE32 /* MovieDetailResponse.swift */; };
+		285C46651F09597A0085CE32 /* BookingWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C46641F09597A0085CE32 /* BookingWebViewController.swift */; };
 		286D6A5F1F089BBB005DB2DD /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D6A5E1F089BBB005DB2DD /* MovieListViewModel.swift */; };
 		286D6A611F089C73005DB2DD /* MoviesListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D6A601F089C73005DB2DD /* MoviesListResponse.swift */; };
 		28AF0AA11F08ACA100439BA6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF0AA01F08ACA100439BA6 /* NetworkManager.swift */; };
@@ -58,9 +60,11 @@
 		2807B5791F080215007258E6 /* Cathay_CinemaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cathay_CinemaUITests.swift; sourceTree = "<group>"; };
 		2807B57B1F080215007258E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2807B5871F080416007258E6 /* MoviesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesListViewController.swift; sourceTree = "<group>"; };
+		28302F221F0959E60056D413 /* BookingWebViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingWebViewModel.swift; sourceTree = "<group>"; };
 		285C465C1F09128C0085CE32 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		285C46601F0917F60085CE32 /* MovieDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailTableViewController.swift; sourceTree = "<group>"; };
 		285C46621F0923C70085CE32 /* MovieDetailResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailResponse.swift; sourceTree = "<group>"; };
+		285C46641F09597A0085CE32 /* BookingWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingWebViewController.swift; sourceTree = "<group>"; };
 		286D6A5E1F089BBB005DB2DD /* MovieListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		286D6A601F089C73005DB2DD /* MoviesListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesListResponse.swift; sourceTree = "<group>"; };
 		28AF0AA01F08ACA100439BA6 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 			children = (
 				2807B5871F080416007258E6 /* MoviesListViewController.swift */,
 				285C46601F0917F60085CE32 /* MovieDetailTableViewController.swift */,
+				285C46641F09597A0085CE32 /* BookingWebViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				286D6A5E1F089BBB005DB2DD /* MovieListViewModel.swift */,
 				28AF0AA41F08D24100439BA6 /* MovieListCollectionViewCell.swift */,
 				285C465C1F09128C0085CE32 /* MovieDetailViewModel.swift */,
+				28302F221F0959E60056D413 /* BookingWebViewModel.swift */,
 			);
 			name = ViewAndViewModel;
 			sourceTree = "<group>";
@@ -524,7 +530,9 @@
 				285C46631F0923C70085CE32 /* MovieDetailResponse.swift in Sources */,
 				28AF0AA51F08D24100439BA6 /* MovieListCollectionViewCell.swift in Sources */,
 				2807B55A1F080215007258E6 /* AppDelegate.swift in Sources */,
+				28302F231F0959E60056D413 /* BookingWebViewModel.swift in Sources */,
 				2807B5881F080416007258E6 /* MoviesListViewController.swift in Sources */,
+				285C46651F09597A0085CE32 /* BookingWebViewController.swift in Sources */,
 				28AF0AA11F08ACA100439BA6 /* NetworkManager.swift in Sources */,
 				286D6A611F089C73005DB2DD /* MoviesListResponse.swift in Sources */,
 				286D6A5F1F089BBB005DB2DD /* MovieListViewModel.swift in Sources */,

@@ -25,6 +25,7 @@ class MovieListCollectionViewCell:UICollectionViewCell {
             self.popularityView.rating = 0.0
             return
         }
+        
         if let title = movieItem.originalTitle {
             self.name.text = title
         } else {
