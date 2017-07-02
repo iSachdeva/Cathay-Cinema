@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoviesListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class MoviesListViewController: UIViewController {
     
     @IBOutlet var moviesCollectionView:UICollectionView!
     @IBOutlet var viewModel:MovieListViewModel!
@@ -28,8 +28,7 @@ class MoviesListViewController: UIViewController, UICollectionViewDelegate, UICo
     lazy var refreshControl: UIRefreshControl = {
         
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(MoviesListViewController.handleRefresh(_:)),
-                                 for: UIControlEvents.valueChanged)
+        refreshControl.addTarget(self, action: #selector(MoviesListViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
         refreshControl.tintColor = UIColor.white
         return refreshControl
     }()
@@ -53,7 +52,7 @@ class MoviesListViewController: UIViewController, UICollectionViewDelegate, UICo
 }
 
 // MARK: - UICollectionViewDataSource
-extension MoviesListViewController {
+extension MoviesListViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.viewModel.numberOfSections()
     }
@@ -61,6 +60,7 @@ extension MoviesListViewController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.viewModel.numberOfRows()
     }
+    
     
     func collectionView(_ collectionView: UICollectionView,cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -71,6 +71,12 @@ extension MoviesListViewController {
         
         if (self.viewModel.numberOfRows()-1 == indexPath.row) && (self.viewModel.isLastPageLoaded == false) && (self.viewModel.isLoadingList == false) {
             self.loadMovies()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let selectedMovie = self.viewModel.movie(at: indexPath.row) {
+            self.performSegue(withIdentifier: Constant.Segue.MovieListToMovieDetailScreenID, sender: selectedMovie)
         }
     }
 }
@@ -91,4 +97,16 @@ extension MoviesListViewController : UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension MoviesListViewController {
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constant.Segue.MovieListToMovieDetailScreenID {
+        
+            let movieDetailViewController = segue.destination as! MovieDetailTableViewController
+            movieDetailViewController.movie =  sender as? Movie
+    
+        }
+    }
+
+}
 

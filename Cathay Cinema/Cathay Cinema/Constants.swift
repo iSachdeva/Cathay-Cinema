@@ -21,8 +21,11 @@ struct Constant {
     struct URL {
         static let baseUrl = "https://api.themoviedb.org/"
         static let movieList = "3/discover/movie"
+        static let movieDetail = "3/movie"
         static let imageBaseUrl = "https://image.tmdb.org/t/p/"
     }
     
-    
+    struct Segue {
+        static let MovieListToMovieDetailScreenID = "MovieListToMovieDetailScreenID"
+    }
 }

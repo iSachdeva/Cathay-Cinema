@@ -22,6 +22,14 @@ class MovieListViewModel:NSObject {
     var isLastPageLoaded:Bool = false
     var isLoadingList = false
    
+    func movie(at index:Int) -> Movie? {
+        if self.movies.count >= index {
+            return self.movies[index]
+        } else {
+            return nil
+        }
+    }
+    
     func clearMovieList() {
         self.movies.removeAll()
         self.pageNumber = 0
@@ -76,7 +84,7 @@ class MovieListViewModel:NSObject {
     func loadMoviesList(completionHandler:@escaping (Bool)->()) {
         self.isLoadingList = true
        
-        self.networkManager.getMoviesList(forPage: (self.pageNumber + 1), sortBy:self.moviesSortBy, completionHandler: { (isSuccess,response,error) in
+        self.networkManager.getMoviesList(forPage: (self.pageNumber + 1), sortBy:self.moviesSortBy, completionHandler: { [unowned self] (isSuccess,response,error) in
            
             if isSuccess {
                 if let movies = response?.movies {
@@ -86,7 +94,6 @@ class MovieListViewModel:NSObject {
                     self.isLoadingList = false
                 }
             }
-            
             completionHandler(isSuccess)
         })
     }

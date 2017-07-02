@@ -10,9 +10,7 @@ import Foundation
 import UIKit
 import Cosmos
 import Alamofire
-import Kingfisher
 import AlamofireImage
-
 
 class MovieListCollectionViewCell:UICollectionViewCell {
     

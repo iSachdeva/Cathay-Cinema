@@ -15,6 +15,10 @@ enum NetworkRequestType {
     case getMovies
 }
 
+typealias MoviesListCompletionHandler = (Bool,MoviesListResponse?,String?) -> ()
+typealias MovieDetailCompletionHandler = (Bool,MovieDetail?,String?) -> ()
+
+
 class NetworkManager {
     
     init() {
@@ -27,7 +31,7 @@ class NetworkManager {
         }
     }
  
-    func getMoviesList(forPage page:Int,sortBy:String, completionHandler:@escaping (Bool,MoviesListResponse?,String?)->()) {
+    func getMoviesList(forPage page:Int,sortBy:String, completionHandler:@escaping MoviesListCompletionHandler) {
         
         let url = Constant.URL.baseUrl + Constant.URL.movieList
         
@@ -52,6 +56,31 @@ class NetworkManager {
         }
     }
 
+    
+    func getMovieDetail(forMovie id:Int, completionHandler:@escaping MovieDetailCompletionHandler) {
+        
+        let url = Constant.URL.baseUrl + Constant.URL.movieDetail + "/\(String(id))"
+        
+        let parameters = ["api_key":Constant.PrivateKey.restAPI]
+        
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: self.header).validate().responseObject { (response:DataResponse<MovieDetail>) in
+            
+            DispatchQueue.main.async {
+                
+                switch(response.result) {
+                case .success:
+                    if let moviesDetailResponse = response.result.value {
+                        completionHandler(true,moviesDetailResponse,nil)
+                    }
+                    break
+                    
+                case .failure:
+                    completionHandler(false,nil,response.error?.localizedDescription)
+                    break
+                }
+            }
+        }
+    }
 
 }
   
