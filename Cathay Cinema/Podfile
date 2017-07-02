@@ -1,0 +1,25 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '8.0'
+
+target 'Cathay Cinema' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+  
+  # Pods for Cathay Cinema
+  
+  pod 'Alamofire', '~> 4.4'
+  pod 'AlamofireObjectMapper', '~> 4.0'
+  pod 'Cosmos', '~> 10.0'
+  pod 'ObjectMapper', '~> 2.2'
+
+  target 'Cathay CinemaTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Cathay CinemaUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FFy-UZ-4Ng">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Movies-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MoviesListViewController" customModule="Cathay_Cinema" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uQY-VX-0zU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="EfK-nG-9tN">
+                                    <size key="itemSize" width="180" height="220"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCollectionViewCellIdentifier" id="Wij-ic-Kvg">
+                                        <rect key="frame" x="5" y="5" width="180" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="220"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1aQ-cs-wZB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                                    <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="self.layer.masksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="self.layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fast and Furious 8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Cl-bV-9Lf">
+                                                    <rect key="frame" x="8" y="184" width="164" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fna-51-nBt" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="8" y="202" width="80" height="10"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="10" id="98M-df-s3H"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                            <real key="value" value="12"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                            <real key="value" value="3.3999999999999999"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="1aQ-cs-wZB" firstAttribute="centerX" secondItem="Wij-ic-Kvg" secondAttribute="centerX" id="2Pq-Sx-Lc3"/>
+                                            <constraint firstItem="7Cl-bV-9Lf" firstAttribute="leading" secondItem="Wij-ic-Kvg" secondAttribute="leadingMargin" id="6Va-Ca-ebQ"/>
+                                            <constraint firstItem="Fna-51-nBt" firstAttribute="leading" secondItem="Wij-ic-Kvg" secondAttribute="leading" constant="8" id="Awp-BL-9K7"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="7Cl-bV-9Lf" secondAttribute="trailing" id="IXd-9x-TOd"/>
+                                            <constraint firstItem="1aQ-cs-wZB" firstAttribute="top" secondItem="Wij-ic-Kvg" secondAttribute="top" id="XQE-HK-Ctm"/>
+                                            <constraint firstAttribute="bottom" secondItem="1aQ-cs-wZB" secondAttribute="bottom" constant="40" id="ZYT-Rr-Vzq"/>
+                                            <constraint firstAttribute="bottom" secondItem="Fna-51-nBt" secondAttribute="bottom" constant="8" id="dRO-g5-3vT"/>
+                                            <constraint firstItem="1aQ-cs-wZB" firstAttribute="width" secondItem="Wij-ic-Kvg" secondAttribute="width" id="oH1-CQ-6wf"/>
+                                            <constraint firstItem="7Cl-bV-9Lf" firstAttribute="top" secondItem="1aQ-cs-wZB" secondAttribute="bottom" constant="4" id="ugO-oO-qxT"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="UoU-zz-0ru"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Kas-yg-Mcw"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uQY-VX-0zU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="M3f-GD-h7N"/>
+                            <constraint firstItem="uQY-VX-0zU" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="XrK-b6-WBp"/>
+                            <constraint firstItem="uQY-VX-0zU" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="YCH-Cq-buX"/>
+                            <constraint firstItem="uQY-VX-0zU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dG9-KQ-tYe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Movies" id="qrl-dn-HRc"/>
+                    <connections>
+                        <outlet property="moviesCollectionView" destination="uQY-VX-0zU" id="f60-RF-ZnG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079.2" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DIo-mk-PIK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FFy-UZ-4Ng" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5KL-Ic-GAH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ZcM-ej-ILR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A9R-R6-JsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="792.95352323838085"/>
+        </scene>
+    </scenes>
+</document>
