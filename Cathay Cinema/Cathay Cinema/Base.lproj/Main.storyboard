@@ -24,24 +24,24 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uQY-VX-0zU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="EfK-nG-9tN">
-                                    <size key="itemSize" width="180" height="220"/>
+                                <color key="backgroundColor" red="0.27843137254901962" green="0.27450980392156865" blue="0.27450980392156865" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aaL-rn-iN0">
+                                    <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCollectionViewCellIdentifier" id="Wij-ic-Kvg" customClass="MovieListCollectionViewCell" customModule="Cathay_Cinema" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="5" width="180" height="220"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="179" height="226"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="220"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="179" height="226"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1aQ-cs-wZB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
-                                                    <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MovieListPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="1aQ-cs-wZB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="181"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.37493265086206895" colorSpace="calibratedWhite"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="self.layer.masksToBounds" value="YES"/>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="self.layer.cornerRadius">
@@ -49,18 +49,15 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fast and Furious 8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="7Cl-bV-9Lf">
-                                                    <rect key="frame" x="8" y="184" width="164" height="16.5"/>
-                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fast and Furious 8" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="7Cl-bV-9Lf">
+                                                    <rect key="frame" x="8" y="185" width="163" height="14"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fna-51-nBt" customClass="CosmosView" customModule="Cosmos">
-                                                    <rect key="frame" x="8" y="202" width="80" height="10"/>
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fna-51-nBt" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="8" y="200" width="80" height="12"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="10" id="98M-df-s3H"/>
-                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="starSize">
                                                             <real key="value" value="12"/>
@@ -79,14 +76,15 @@
                                         <constraints>
                                             <constraint firstItem="1aQ-cs-wZB" firstAttribute="centerX" secondItem="Wij-ic-Kvg" secondAttribute="centerX" id="2Pq-Sx-Lc3"/>
                                             <constraint firstItem="7Cl-bV-9Lf" firstAttribute="leading" secondItem="Wij-ic-Kvg" secondAttribute="leadingMargin" id="6Va-Ca-ebQ"/>
-                                            <constraint firstItem="Fna-51-nBt" firstAttribute="leading" secondItem="Wij-ic-Kvg" secondAttribute="leading" constant="8" id="Awp-BL-9K7"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="7Cl-bV-9Lf" secondAttribute="trailing" id="IXd-9x-TOd"/>
                                             <constraint firstItem="1aQ-cs-wZB" firstAttribute="top" secondItem="Wij-ic-Kvg" secondAttribute="top" id="XQE-HK-Ctm"/>
-                                            <constraint firstAttribute="bottom" secondItem="1aQ-cs-wZB" secondAttribute="bottom" constant="40" id="ZYT-Rr-Vzq"/>
-                                            <constraint firstAttribute="bottom" secondItem="Fna-51-nBt" secondAttribute="bottom" constant="8" id="dRO-g5-3vT"/>
+                                            <constraint firstAttribute="bottom" secondItem="1aQ-cs-wZB" secondAttribute="bottom" constant="45" id="ZYT-Rr-Vzq"/>
+                                            <constraint firstItem="Fna-51-nBt" firstAttribute="top" secondItem="7Cl-bV-9Lf" secondAttribute="bottom" constant="1" id="fKt-4W-jXG"/>
+                                            <constraint firstAttribute="leadingMargin" secondItem="Fna-51-nBt" secondAttribute="leading" id="gpd-qj-BpH"/>
                                             <constraint firstItem="1aQ-cs-wZB" firstAttribute="width" secondItem="Wij-ic-Kvg" secondAttribute="width" id="oH1-CQ-6wf"/>
                                             <constraint firstItem="7Cl-bV-9Lf" firstAttribute="top" secondItem="1aQ-cs-wZB" secondAttribute="bottom" constant="4" id="ugO-oO-qxT"/>
                                         </constraints>
+                                        <size key="customSize" width="179" height="226"/>
                                         <connections>
                                             <outlet property="name" destination="7Cl-bV-9Lf" id="ub3-Bp-ShM"/>
                                             <outlet property="popularityView" destination="Fna-51-nBt" id="OxU-CZ-24O"/>
@@ -100,7 +98,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.27843137254901962" green="0.27450980392156865" blue="0.27450980392156865" alpha="0.0" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="uQY-VX-0zU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="M3f-GD-h7N"/>
                             <constraint firstItem="uQY-VX-0zU" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="XrK-b6-WBp"/>
@@ -117,16 +115,19 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <customObject id="mNO-vt-Ys9" customClass="MovieListViewModel" customModule="Cathay_Cinema" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="1079.2" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1094" y="806"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DIo-mk-PIK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FFy-UZ-4Ng" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5KL-Ic-GAH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="5KL-Ic-GAH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -138,4 +139,7 @@
             <point key="canvasLocation" x="89" y="807"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MovieListPlaceholder" width="60" height="60"/>
+    </resources>
 </document>

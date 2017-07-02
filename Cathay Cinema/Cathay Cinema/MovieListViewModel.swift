@@ -17,9 +17,16 @@ class MovieListViewModel:NSObject {
 
     let networkManager = NetworkManager()
     let moviesSortBy = "release_date.desc"
-    var pageNumber = 1
+    var pageNumber = 0
     var movies = [Movie]()
-    
+    var isLastPageLoaded:Bool = false
+    var isLoadingList = false
+   
+    func clearMovieList() {
+        self.movies.removeAll()
+        self.pageNumber = 0
+    }
+
     func numberOfSections() -> Int {
         return 1
     }
@@ -52,21 +59,35 @@ class MovieListViewModel:NSObject {
         return cell
     }
     
-    func loadMoviesList(completionHandler:@escaping (Bool)->()) {
+    func checkIfLastPage(totalCount:Int?) {
     
+        guard let totalCountOfPages = totalCount else {
+            self.isLastPageLoaded = true
+            return
+        }
+        
+        if totalCountOfPages == self.movies.count {
+            self.isLastPageLoaded = true
+        } else {
+            self.isLastPageLoaded = false
+        }
+    }
+    
+    func loadMoviesList(completionHandler:@escaping (Bool)->()) {
+        self.isLoadingList = true
+       
         self.networkManager.getMoviesList(forPage: (self.pageNumber + 1), sortBy:self.moviesSortBy, completionHandler: { (isSuccess,response,error) in
            
             if isSuccess {
                 if let movies = response?.movies {
                     self.movies.append(contentsOf: movies)
                     self.pageNumber = self.pageNumber + 1
+                    self.checkIfLastPage(totalCount: response?.totalPages)
+                    self.isLoadingList = false
                 }
             }
+            
             completionHandler(isSuccess)
         })
     }
-    
-    
-    
-    
 }
